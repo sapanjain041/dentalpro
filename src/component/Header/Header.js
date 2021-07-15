@@ -8,10 +8,7 @@ const Header = () => {
           <div className="header-nav-wrapper navbar-scrolltofixed bg-white">
             <div className="container">
               <nav id="menuzord-right" className="menuzord blue no-bg">
-                <a
-                  className="menuzord-brand pull-left flip mb-15"
-                  href="index-mp-layout1.html"
-                >
+                <a className="menuzord-brand pull-left flip mb-15" href="">
                   <img src="assests/images/logo-wide.png" alt="" />
                 </a>
                 <ul className="menuzord-menu">
@@ -19,19 +16,19 @@ const Header = () => {
                     <a href="#home">Home</a>
                   </li>
                   <li>
-                    <a href="#">Appointment</a>
+                    <a href="#AppoinmentForm">Appointment</a>
                   </li>
                   <li>
-                    <a href="#"> Our services</a>
+                    <a href="#Ourservices"> Our services</a>
                   </li>
                   <li>
-                    <a href="#">Clinic Info</a>
+                    <a href="#ClinicInfo">Clinic Info</a>
                   </li>
                   <li>
-                    <a href="#">Gallery</a>
+                    <a href="#Gallary">Gallery</a>
                   </li>
                   <li>
-                    <a href="#"> Blogs</a>
+                    <a href="#Blogs"> Blogs</a>
                   </li>
                 </ul>
               </nav>

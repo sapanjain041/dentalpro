@@ -5,7 +5,7 @@ import InfoSlider from "./InfoSlider";
 import "./Slider.css";
 
 const Slider = () => {
-  const { sliderImageData, isloading } = useSelector((state) => state.data);
+  const { sliderImageData } = useSelector((state) => state.data);
   const dispatch = useDispatch();
 
   const [index, setIndex] = useState(0);
@@ -55,11 +55,17 @@ const Slider = () => {
               <img
                 src={image.slider_image}
                 alt="banner-img"
-                className="slide-banner-img"
+                className="banner-img"
               />
             </article>
           );
         })}
+        {/* <p className = "prev" onClick={()=>setIndex(index-1)}>
+                      <ArrowBackIosIcon/>
+              </p>
+              <p className = "next" onClick={()=>setIndex(index+1)}>
+                      <ArrowForwardIosIcon/>
+              </p> */}
       </div>
       <div className="display-table">
         <InfoSlider />

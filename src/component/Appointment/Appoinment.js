@@ -4,12 +4,12 @@ import DoctorInfo from "./DoctorInfo";
 
 const Appoinment = () => {
   return (
-    <section id="about">
+    <section id="Appoinment">
       <div className="container pt-0">
         <div className="section-content">
           <div className="row">
-            <DoctorInfo />
-            <AppoinmentForm />
+            <DoctorInfo id="DoctorInfo" />
+            <AppoinmentForm id="AboutInfo" />
           </div>
         </div>
       </div>

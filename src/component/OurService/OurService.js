@@ -11,7 +11,7 @@ const OurService = () => {
   }, []);
   return (
     <section
-      id="services"
+      id="Ourservices"
       className="divider parallax layer-overlay overlay-theme-colored-9"
       data-bg-img="images/bg/bg3.jpg"
     >

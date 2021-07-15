@@ -5,9 +5,25 @@ const initialState = {
   ourServiceData: [],
   clinicInfoData: [],
   sliderImageData: [],
+  blogData: [],
+  specialityData: [],
   AppoinmentData: [],
+  singleDoctorInfo: {
+    name: "",
+    expectisem: "",
+    about_title: "",
+    about_description: "",
+    speciality: [],
+  },
 
-  loading: false,
+  singleClinicInfoData: {
+    Professional_dentists: "",
+    Setisfied_patient: "",
+    Our_machines: "",
+    Hospital_rooms: "",
+  },
+
+  isloading: false,
 };
 
 export const dentalReducer = (state = initialState, action) => {
@@ -16,6 +32,21 @@ export const dentalReducer = (state = initialState, action) => {
       return {
         ...state,
         aboutInfoData: action.payload,
+      };
+    case types.GET_SPECIALITY:
+      return {
+        ...state,
+        specialityData: action.payload,
+      };
+    case types.GET_BLOGINFO:
+      return {
+        ...state,
+        blogData: action.payload,
+      };
+    case types.ISLOADING:
+      return {
+        ...state,
+        isloading: action.payload,
       };
     case types.GET_DOCTORINFO:
       return {
@@ -31,6 +62,16 @@ export const dentalReducer = (state = initialState, action) => {
       return {
         ...state,
         clinicInfoData: action.payload,
+      };
+    case types.GET_SINGLE_CLINICINFO:
+      return {
+        ...state,
+        singleClinicInfoData: action.payload,
+      };
+    case types.GET_SINGLE_DOCTORINFO:
+      return {
+        ...state,
+        singleDoctorInfo: action.payload,
       };
     case types.GET_SLIDERIMAGES:
       return {

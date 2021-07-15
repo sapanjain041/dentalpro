@@ -1,18 +1,19 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getClinicInfo } from "../../redux/action";
+import { getSingleClinicInfo } from "../../redux/action";
 
 const ClinicInfo = () => {
-  const data = useSelector((state) => state.data.clinicInfoData);
+  const data = useSelector((state) => state.data.singleClinicInfoData);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getClinicInfo());
-  }, []);
+    dispatch(getSingleClinicInfo(1));
+  }, [dispatch]);
 
   return (
     <section
+      id="ClinicInfo"
       className="divider parallax layer-overlay overlay-white-8"
       data-bg-img="assests/images/bg/bg5.jpg"
     >
@@ -27,7 +28,7 @@ const ClinicInfo = () => {
                   data-value="10"
                   className="animate-number font-38"
                 >
-                  {data.Professional_dentists}
+                  {data.professional_dentists}
                 </h2>
                 <h5 className="text-uppercase mb-0">Professional Dentists</h5>
               </div>
@@ -40,7 +41,7 @@ const ClinicInfo = () => {
                   data-value="2480"
                   className="animate-number font-38"
                 >
-                  {data.Setisfied_patient}
+                  {data.setisfied_patient}
                 </h2>
                 <h5 className="text-uppercase mb-0">Setisfied Patient</h5>
               </div>
@@ -53,7 +54,7 @@ const ClinicInfo = () => {
                   data-value="40"
                   className="animate-number font-38"
                 >
-                  {data.Hospital_rooms}
+                  {data.hospital_rooms}
                 </h2>
                 <h5 className="text-uppercase mb-0">Hospital Rooms</h5>
               </div>
@@ -66,7 +67,7 @@ const ClinicInfo = () => {
                   data-value="20"
                   className="animate-number font-38"
                 >
-                  {data.Our_machines}
+                  {data.our_machines}
                 </h2>
                 <h5 className="text-uppercase mb-0">Our Machines</h5>
               </div>

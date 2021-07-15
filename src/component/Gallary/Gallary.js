@@ -2,7 +2,7 @@ import React from "react";
 
 const Gallary = () => {
   return (
-    <section className="bg-lighter">
+    <section className="bg-lighter" id="Gallary">
       <div className="container">
         <div className="section-title text-center mt-0">
           <div className="row">

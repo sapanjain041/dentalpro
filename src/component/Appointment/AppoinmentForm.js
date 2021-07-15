@@ -19,7 +19,7 @@ const AppoinmentForm = () => {
     setMessage("");
   };
   return (
-    <div className="col-md-4">
+    <div id="AppoinmentForm" className="col-md-4">
       <div className="border-3px p-30 pt-10 pb-20 border-theme-colored bg-theme-colored2">
         <h3 className="text-white">Request An Appointment!</h3>
         <p className="text-white mt-0">
