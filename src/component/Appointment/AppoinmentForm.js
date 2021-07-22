@@ -1,18 +1,27 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postAppointment } from "../../redux/action";
+import { toast } from "react-toastify";
 
 const AppoinmentForm = () => {
   const [name, setName] = useState("");
   const [email, setemail] = useState("");
   const [message, setMessage] = useState("");
   const [appoinment_date, setAppoinment_date] = useState("");
+
+  const notify = (mess) => {
+    if (mess == "success") {
+      toast.info("your appoinment is booked we will call you soon");
+    } else {
+      toast.error("some error please try again ");
+    }
+  };
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name, email, message, appoinment_date);
     const newAppoinment = { name, email, message, appoinment_date };
-    dispatch(postAppointment(newAppoinment));
+    dispatch(postAppointment(newAppoinment, notify));
     setName("");
     setemail("");
     setAppoinment_date("");

@@ -8,7 +8,7 @@ export const getAboutInfo = () => async (dispatch) => {
   );
   dispatch({
     type: types.GET_ABOUTINFO,
-    payload: result.data,
+    payload: result.data.results,
   });
   dispatch(isloading(false));
 };
@@ -29,7 +29,7 @@ export const getOurServices = () => async (dispatch) => {
   );
   dispatch({
     type: types.GET_OURSERVICES,
-    payload: result.data,
+    payload: result.data.results,
   });
 };
 
@@ -39,27 +39,32 @@ export const getClinicInfo = () => async (dispatch) => {
   );
   dispatch({
     type: types.GET_CLINICINFO,
-    payload: result.data,
+    payload: result.data.results,
   });
 };
 
 export const getSliderImages = () => async (dispatch) => {
-  const result = await axios.get("https://dentalproject.herokuapp.com/slider/");
+  const result = await axios.get(process.env.REACT_APP_URL + "slider/");
   dispatch({
     type: types.GET_SLIDERIMAGES,
-    payload: result.data,
+    payload: result.data.results,
   });
 };
 
-export const postAppointment = (post) => async (dispatch) => {
-  const result = await axios.post(
-    "https://dentalproject.herokuapp.com/appoinment/",
-    post
-  );
-  dispatch({
-    type: types.POST_APPOINTMENT,
-    payload: result.data,
-  });
+export const postAppointment = (post, notify) => async (dispatch) => {
+  try {
+    const result = await axios.post(
+      "https://dentalproject.herokuapp.com/appoinment/",
+      post
+    );
+    dispatch({
+      type: types.POST_APPOINTMENT,
+      payload: result.data.results,
+    });
+    notify("success");
+  } catch (error) {
+    notify("error");
+  }
 };
 
 export const getSingleDoctorInfo = (id) => async (dispatch) => {
@@ -101,13 +106,13 @@ export const getSpeciality = () => async (dispatch) => {
   );
   dispatch({
     type: types.GET_SPECIALITY,
-    payload: result.data,
+    payload: result.data.results,
   });
 };
 export const getBLogInfo = () => async (dispatch) => {
-  const result = await axios.get("https://dentalproject.herokuapp.com/blog/");
+  const result = await axios.get(process.env.REACT_APP_URL + "blog/");
   dispatch({
     type: types.GET_BLOGINFO,
-    payload: result.data,
+    payload: result.data.results,
   });
 };

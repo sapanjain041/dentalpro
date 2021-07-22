@@ -12,12 +12,24 @@ import Footer from "./component/Footer/Footer";
 import LoadingOverlay from "react-loading-overlay";
 import { useSelector } from "react-redux";
 import BeatLoader from "react-spinners/BeatLoader";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const data = useSelector((state) => state.data.isloading);
 
   return (
     <div className="App">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className="main-content">
         <LoadingOverlay
           active={data}
